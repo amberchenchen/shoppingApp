@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+		xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		xmlns:local="clr-namespace:MasterDetailPageNavigation;assembly=MasterDetailPageNavigation"
+		x:Class="MasterDetailPageNavigation.ProductDetailPage"
+		Title="Product Detail">
+	<ContentPage.BindingContext>
+      <local:ProductDetailModel />
+    </ContentPage.BindingContext>
+	
+	<ContentPage.Content>
+		<StackLayout>
+			<Image Source="{Binding imgName}"></Image>
+			<Label Text="Product Name : "></Label>
+			<Label Text="{Binding productName}"></Label>
+			<Label Text="Product Description : "></Label>
+			<Label Text="{Binding productDesc}"></Label>
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>
