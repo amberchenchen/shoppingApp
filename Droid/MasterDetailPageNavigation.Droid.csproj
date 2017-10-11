@@ -9,15 +9,17 @@
     <OutputType>Library</OutputType>
     <RootNamespace>MasterDetailPageNavigation.Droid</RootNamespace>
     <AssemblyName>MasterDetailPageNavigation.Droid</AssemblyName>
-    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
     <AndroidApplication>True</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidResgenClass>Resource</AndroidResgenClass>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
-    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>
-  </PropertyGroup>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix><!--     <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>
+ -->  <!--     <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>
+ -->  
+<!--     <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>
+ -->  </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
@@ -99,6 +101,7 @@
     <None Include="Properties\AndroidManifest.xml" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="packages.config" />
+    <None Include="MasterDetailPageNavigation.Droid.csproj" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Tabbar.axml" />
@@ -108,6 +111,36 @@
     <AndroidResource Include="Resources\drawable-hdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
+    <AndroidResource Include="Resources\drawable\contacts.png" />
+    <AndroidResource Include="Resources\drawable\aw42.jpg" />
+    <AndroidResource Include="Resources\drawable\awS.jpg" />
+    <AndroidResource Include="Resources\drawable\hamburger.png" />
+    <AndroidResource Include="Resources\drawable\iphone5s.jpg" />
+    <AndroidResource Include="Resources\drawable\iphone7.jpg" />
+    <AndroidResource Include="Resources\drawable\macAir.jpg" />
+    <AndroidResource Include="Resources\drawable\macPro.jpg" />
+    <AndroidResource Include="Resources\drawable-hdpi\aw42.jpg" />
+    <AndroidResource Include="Resources\drawable-hdpi\awS.jpg" />
+    <AndroidResource Include="Resources\drawable-hdpi\contacts.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\iphone5s.jpg" />
+    <AndroidResource Include="Resources\drawable-hdpi\iphone7.jpg" />
+    <AndroidResource Include="Resources\drawable-hdpi\macAir.jpg" />
+    <AndroidResource Include="Resources\drawable-hdpi\macPro.jpg" />
+    <AndroidResource Include="Resources\drawable-xhdpi\aw42.jpg" />
+    <AndroidResource Include="Resources\drawable-xhdpi\awS.jpg" />
+    <AndroidResource Include="Resources\drawable-xhdpi\contacts.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\iphone5s.jpg" />
+    <AndroidResource Include="Resources\drawable-xhdpi\iphone7.jpg" />
+    <AndroidResource Include="Resources\drawable-xhdpi\macAir.jpg" />
+    <AndroidResource Include="Resources\drawable-xhdpi\macPro.jpg" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\aw42.jpg" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\awS.jpg" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\contacts.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iphone5s.jpg" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\iphone7.jpg" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\macAir.jpg" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\macPro.jpg" />
+    <AndroidResource Include="Resources\drawable\ShoppingCart.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets')" />

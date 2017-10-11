@@ -123,6 +123,7 @@
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
     <None Include="packages.config" />
+    <None Include="MasterDetailPageNavigation.iOS.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -138,6 +139,8 @@
     <BundleResource Include="Resources\macPro.jpg" />
     <BundleResource Include="Resources\awS.jpg" />
     <BundleResource Include="Resources\aw42.jpg" />
+    <BundleResource Include="Resources\ShoppingCart.png" />
+    <BundleResource Include="Resources\circle.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.4.0.282\build\netstandard1.0\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.4.0.282\build\netstandard1.0\Xamarin.Forms.targets')" />

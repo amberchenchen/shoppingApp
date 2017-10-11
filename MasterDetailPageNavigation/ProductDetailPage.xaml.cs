@@ -55,5 +55,16 @@ namespace MasterDetailPageNavigation
 
 			BindingContext = vm;
 		}
+
+		public void addToCart()
+		{
+			var items = App.Current.MainPage.ToolbarItems;
+
+			int cnt = Int32.Parse(items[1].Text);
+
+			cnt++;
+
+			items[1].Text = cnt.ToString();
+		}
 	}
 }

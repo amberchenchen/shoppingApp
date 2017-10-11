@@ -3,6 +3,12 @@
 				  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 				  xmlns:local="clr-namespace:MasterDetailPageNavigation;assembly=MasterDetailPageNavigation"
 				  x:Class="MasterDetailPageNavigation.MainPage">
+
+	<ContentPage.ToolbarItems>
+  		<ToolbarItem Icon="ShoppingCart.png"/>
+		<ToolbarItem Text="0"/>
+	</ContentPage.ToolbarItems>
+	
   <MasterDetailPage.Master>
   	<local:MasterPage x:Name="masterPage" />
   </MasterDetailPage.Master>

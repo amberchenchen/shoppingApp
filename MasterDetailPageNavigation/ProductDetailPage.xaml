@@ -11,11 +11,12 @@
 	
 	<ContentPage.Content>
 		<StackLayout>
-			<Image Source="{Binding imgName}"></Image>
+			<Image Source="{Binding imgName}" HeightRequest="300"></Image>
 			<Label Text="Product Name : "></Label>
 			<Label Text="{Binding productName}"></Label>
 			<Label Text="Product Description : "></Label>
 			<Label Text="{Binding productDesc}"></Label>
+			<Button Image="ShoppingCart.png" Text="Add to cart" WidthRequest="100" BorderColor="Black" BorderWidth="1" Clicked="addToCart"/>
 		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>
