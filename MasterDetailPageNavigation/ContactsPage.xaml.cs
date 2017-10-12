@@ -15,41 +15,8 @@ namespace MasterDetailPageNavigation
 			InitializeComponent();
 
 			var ProductItems = new List<ProductDetailModel>();
-			ProductItems.Add(new ProductDetailModel
-			{
-				Id = "1",
-				imgName = "iphone5s.jpg",
-			});
 
-			ProductItems.Add(new ProductDetailModel
-			{
-				Id = "2",
-				imgName = "iphone7.jpg",
-			});
-
-			ProductItems.Add(new ProductDetailModel
-			{
-				Id = "3",
-				imgName = "macPro.jpg",
-			});
-
-			ProductItems.Add(new ProductDetailModel
-			{
-				Id = "4",
-				imgName = "macAir.jpg",
-			});
-
-			ProductItems.Add(new ProductDetailModel
-			{
-				Id = "5",
-				imgName = "aw42.jpg",
-			});
-
-			ProductItems.Add(new ProductDetailModel
-			{
-				Id = "6",
-				imgName = "awS.jpg",
-			});
+			ProductItems.AddRange(Global.iniProducts());
 
 			var grid = new Grid();
 			grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(2, GridUnitType.Star) });
@@ -57,46 +24,38 @@ namespace MasterDetailPageNavigation
 			grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(200) });
 			grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(200) });
 			var images = new List<Image>();
-			foreach (var p in ProductItems)
-			{
-				images.Add(new Image
-				{
-					Source = p.imgName,
-					ClassId = p.Id
-				});
-			}
 
 			int tmp = 0;
-			for (var i = 0; i < images.Count; i++)
+			foreach (var p in ProductItems)
 			{
-				grid.Children.Add(images[i], 0, i);
+				var i = ProductItems.IndexOf(p);
+
+				var img = new Image
+				{
+					Source = p.imgName
+				};
+
+				grid.Children.Add(img, 0, i);
 				if (i >= 3)
 				{
-					grid.Children.Add(images[i], 1, tmp);
+					grid.Children.Add(img, 1, tmp);
 					tmp++;
 				}
 
 				TapGestureRecognizer tap = new TapGestureRecognizer();
 				tap.Tapped += async (object sender, EventArgs e) =>
 				{
-					await OnImageNameTapped(sender,e);
+					await OnImageNameTapped(sender, e, p);
 				};
-				images[i].GestureRecognizers.Add(tap);
+
+				img.GestureRecognizers.Add(tap);
 			}
 
 			Content = grid;
-
-
-			//listView.ItemsSource = ProductItems;
-			//img1.Source = "iphone5s.jpg";
-			//img1.ClassId = "1";
 		}
 
-		public async Task OnImageNameTapped(object sender, EventArgs args)
+		public async Task OnImageNameTapped(object sender, EventArgs args,ProductDetailModel p)
 		{
-			var imageSender = (Image)sender;
-			var Id = imageSender.ClassId;
-
 			try
 			{
 				var masterDetail = App.Current.MainPage as MasterDetailPage;
@@ -110,12 +69,12 @@ namespace MasterDetailPageNavigation
 
 				if (navigationPage == null)
 				{
-					masterDetail.Detail = new NavigationPage(new ProductDetailPage(Id));
+					masterDetail.Detail = new NavigationPage(new ProductDetailPage(p));
 					masterDetail.IsPresented = false;
 					return;
 				}
 
-				await navigationPage.Navigation.PushAsync(new ProductDetailPage(Id));
+				await navigationPage.Navigation.PushAsync(new ProductDetailPage(p));
 
 				masterDetail.IsPresented = false;
 			}

@@ -40,6 +40,9 @@
     <EmbeddedResource Include="ProductDetailPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="shoppingCartDetail.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -59,6 +62,9 @@
     </Compile>
     <Compile Include="ProductDetailModel.cs" />
     <Compile Include="Global.cs" />
+    <Compile Include="shoppingCartDetail.xaml.cs">
+      <DependentUpon>shoppingCartDetail.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">

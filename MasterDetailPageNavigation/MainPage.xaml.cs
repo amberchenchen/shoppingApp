@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace MasterDetailPageNavigation
@@ -21,6 +22,29 @@ namespace MasterDetailPageNavigation
 				masterPage.ListView.SelectedItem = null;
 				IsPresented = false;
 			}
+		}
+
+		public async Task openShoppingCartDetail()
+		{
+			var masterDetail = App.Current.MainPage as MasterDetailPage;
+
+			if (masterDetail == null || masterDetail.Detail == null)
+			{
+				return;
+			}
+
+			var navigationPage = masterDetail.Detail as NavigationPage;
+
+			if (navigationPage == null)
+			{
+				masterDetail.Detail = new NavigationPage(new shoppingCartDetail());
+				masterDetail.IsPresented = false;
+				return;
+			}
+
+			await navigationPage.Navigation.PushAsync(new shoppingCartDetail());
+
+			masterDetail.IsPresented = false;
 		}
 	}
 }

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MasterDetailPageNavigation.shoppingCartDetail">
+	<ContentPage.Content>
+		<StackLayout>
+	        <ListView x:Name="listView" SeparatorVisibility="None">
+	            <ListView.ItemTemplate>
+	                <DataTemplate>
+	                    <ViewCell>
+	                        <Grid Padding="5,10">
+	                            <Grid.ColumnDefinitions>
+	                                <ColumnDefinition Width="*"/>
+	                                <ColumnDefinition Width="*" />
+	                            </Grid.ColumnDefinitions>
+	                            <Image Source="{Binding imgName}" />
+	                            <Label Grid.Column="1" Text="{Binding productName}" VerticalOptions="FillAndExpand" />
+	                        </Grid>
+	                    </ViewCell>
+	                </DataTemplate>
+	            </ListView.ItemTemplate>
+	        </ListView>
+	    </StackLayout>
+	</ContentPage.Content>
+</ContentPage>

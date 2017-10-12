@@ -5,7 +5,7 @@
 				  x:Class="MasterDetailPageNavigation.MainPage">
 
 	<ContentPage.ToolbarItems>
-  		<ToolbarItem Icon="ShoppingCart.png"/>
+  		<ToolbarItem Icon="ShoppingCart.png" Clicked="openShoppingCartDetail"/>
 		<ToolbarItem Text="0"/>
 	</ContentPage.ToolbarItems>
 	

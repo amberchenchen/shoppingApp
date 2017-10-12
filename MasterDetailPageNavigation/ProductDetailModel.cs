@@ -1,6 +1,11 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Diagnostics;
+using System.Threading.Tasks;
+using System.Windows.Input;
 using Xamarin.Forms;
+using System.Linq;
+
 
 namespace MasterDetailPageNavigation
 {
@@ -12,6 +17,34 @@ namespace MasterDetailPageNavigation
 		public string _productName;
 		public string _productDesc;
 		public string _Id;
+
+		public ICommand addToCart { get; }
+
+		public ProductDetailModel()
+		{
+			this.addToCart = new Command(async () => await Add());
+		}
+
+		public async Task Add()
+		{
+			var product = new ProductDetailModel();
+			product.imgName = imgName;
+			product.Id = Id;
+			product.productName = productName;
+			product.productDesc = productDesc;
+
+			if (Global.imgs.Where(i => i.Id.Equals(Id)).Count() > 0)
+			{
+				await Application.Current.MainPage.DisplayAlert("Alert", "This product is already in shopping cart!", "OK");
+			}
+			else
+			{
+				Global.imgs.Add(product);
+			}
+			var items = App.Current.MainPage.ToolbarItems;
+
+			items[1].Text = Global.imgs.Count.ToString();
+		}
 
 		public String Id
 		{
