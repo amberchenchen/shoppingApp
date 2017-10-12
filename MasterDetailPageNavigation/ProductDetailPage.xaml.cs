@@ -53,18 +53,27 @@ namespace MasterDetailPageNavigation
 
 			InitializeComponent();
 
+			vm.Id = Id;
 			BindingContext = vm;
 		}
 
-		public void addToCart()
+
+		public void addToCart(object sender, EventArgs args)
 		{
+			var btnSender = (Button)sender;
+
+			if (Global.imgs.Contains(btnSender.ClassId))
+			{
+				DisplayAlert("Alert", "This product is already in shopping cart!", "OK");
+			}
+			else
+			{
+				Global.imgs.Add(btnSender.ClassId);
+			}
+
 			var items = App.Current.MainPage.ToolbarItems;
 
-			int cnt = Int32.Parse(items[1].Text);
-
-			cnt++;
-
-			items[1].Text = cnt.ToString();
+			items[1].Text = Global.imgs.Count.ToString();
 		}
 	}
 }

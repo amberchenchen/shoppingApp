@@ -58,6 +58,7 @@
       <DependentUpon>ProductDetailPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ProductDetailModel.cs" />
+    <Compile Include="Global.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">

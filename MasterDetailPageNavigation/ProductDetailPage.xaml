@@ -16,7 +16,9 @@
 			<Label Text="{Binding productName}"></Label>
 			<Label Text="Product Description : "></Label>
 			<Label Text="{Binding productDesc}"></Label>
-			<Button Image="ShoppingCart.png" Text="Add to cart" WidthRequest="100" BorderColor="Black" BorderWidth="1" Clicked="addToCart"/>
+			<Button Image="ShoppingCart.png" Text="Add to cart" WidthRequest="150" 
+				BorderColor="Black" BorderWidth="1" Clicked="addToCart" 
+				HorizontalOptions="Center" VerticalOptions="CenterAndExpand" ClassId="{Binding Id}"/>
 		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>
