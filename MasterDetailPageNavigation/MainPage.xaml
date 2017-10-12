@@ -6,7 +6,7 @@
 
 	<ContentPage.ToolbarItems>
   		<ToolbarItem Icon="ShoppingCart.png" Clicked="openShoppingCartDetail"/>
-		<ToolbarItem Text="0"/>
+		<ToolbarItem Text="0" />
 	</ContentPage.ToolbarItems>
 	
   <MasterDetailPage.Master>

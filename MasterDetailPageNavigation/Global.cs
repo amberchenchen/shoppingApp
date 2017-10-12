@@ -7,10 +7,11 @@ namespace MasterDetailPageNavigation
 	{
 		public static List<ProductDetailModel> imgs = new List<ProductDetailModel>();
 
-		public static List<ProductDetailModel> ProductItems = new List<ProductDetailModel>();
 
 		public static List<ProductDetailModel> iniProducts()
 		{
+			var ProductItems = new List<ProductDetailModel>();
+
 			ProductItems.Add(new ProductDetailModel
 			{
 				Id = "1",

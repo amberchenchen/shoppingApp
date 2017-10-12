@@ -1,23 +1,31 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MasterDetailPageNavigation.shoppingCartDetail">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="MasterDetailPageNavigation.shoppingCartDetail"
+		Title="Shopping List">
 	<ContentPage.Content>
-		<StackLayout>
-	        <ListView x:Name="listView" SeparatorVisibility="None">
-	            <ListView.ItemTemplate>
-	                <DataTemplate>
-	                    <ViewCell>
-	                        <Grid Padding="5,10">
-	                            <Grid.ColumnDefinitions>
-	                                <ColumnDefinition Width="*"/>
-	                                <ColumnDefinition Width="*" />
-	                            </Grid.ColumnDefinitions>
-	                            <Image Source="{Binding imgName}" />
-	                            <Label Grid.Column="1" Text="{Binding productName}" VerticalOptions="FillAndExpand" />
-	                        </Grid>
-	                    </ViewCell>
-	                </DataTemplate>
-	            </ListView.ItemTemplate>
-	        </ListView>
-	    </StackLayout>
+		<ScrollView>
+			<StackLayout>
+			        <ListView x:Name="listView" RowHeight="50" SeparatorVisibility="Default">
+			            <ListView.ItemTemplate>
+			                <DataTemplate>
+			                    <ViewCell>
+			                        <Grid>
+			                            <Grid.ColumnDefinitions>
+			                                <ColumnDefinition Width="*"/>
+			                                <ColumnDefinition Width="*" />
+											<ColumnDefinition Width="*" />
+			                            </Grid.ColumnDefinitions>
+			                            <Image Source="{Binding imgName}"/>
+			                            <Label Grid.Column="1" Text="{Binding productName}" VerticalOptions="FillAndExpand" />
+										<Button Grid.Column="2" Text="Remove Item" VerticalOptions="FillAndExpand" Clicked="removeItem" CommandParameter="{Binding .}"
+										BorderColor="Black" BorderWidth="1" HeightRequest="10" WidthRequest="100" HorizontalOptions="Center" />
+			                        </Grid>
+			                    </ViewCell>
+			                </DataTemplate>
+			            </ListView.ItemTemplate>
+			        </ListView>
+		    </StackLayout>
+		</ScrollView>
 	</ContentPage.Content>
 </ContentPage>

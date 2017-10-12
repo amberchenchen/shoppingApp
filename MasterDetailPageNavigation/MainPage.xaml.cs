@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
@@ -35,6 +36,11 @@ namespace MasterDetailPageNavigation
 
 			var navigationPage = masterDetail.Detail as NavigationPage;
 
+			if (navigationPage.CurrentPage.Title.Equals(new shoppingCartDetail().Title))
+			{
+				return;
+			}
+
 			if (navigationPage == null)
 			{
 				masterDetail.Detail = new NavigationPage(new shoppingCartDetail());
@@ -45,6 +51,7 @@ namespace MasterDetailPageNavigation
 			await navigationPage.Navigation.PushAsync(new shoppingCartDetail());
 
 			masterDetail.IsPresented = false;
+
 		}
 	}
 }
