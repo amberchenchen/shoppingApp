@@ -19,7 +19,7 @@
 			                            <Image Source="{Binding imgName}"/>
 			                            <Label Grid.Column="1" Text="{Binding productName}" VerticalOptions="FillAndExpand" />
 										<Button Grid.Column="2" Text="Remove Item" VerticalOptions="FillAndExpand" Clicked="removeItem" CommandParameter="{Binding .}"
-										BorderColor="Black" BorderWidth="1" HeightRequest="10" WidthRequest="100" HorizontalOptions="Center" />
+										BorderColor="Black" BorderWidth="1" WidthRequest="100" HorizontalOptions="Center" />
 			                        </Grid>
 			                    </ViewCell>
 			                </DataTemplate>

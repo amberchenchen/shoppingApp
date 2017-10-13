@@ -12,10 +12,9 @@
 	<ContentPage.Content>
 		<StackLayout>
 			<Image Source="{Binding imgName}" HeightRequest="300"></Image>
-			<Label Text="Product Name : "></Label>
-			<Label Text="{Binding productName}"></Label>
-			<Label Text="Product Description : "></Label>
-			<Label Text="{Binding productDesc}"></Label>
+			<Label FontAttributes="Bold" Text="{Binding productName}" YAlign="Center" XAlign="Center"></Label>
+			<Label FontAttributes="Bold" Text="{Binding price}" YAlign="Center" XAlign="Center"></Label>
+			<Label FontAttributes="Bold" Text="{Binding productDesc}" YAlign="Center" XAlign="Center"></Label>
 			<Button Image="ShoppingCart.png" Text="Add to cart" WidthRequest="150" 
 				BorderColor="Black" BorderWidth="1" Command="{Binding addToCart}"
 				HorizontalOptions="Center" VerticalOptions="CenterAndExpand" ClassId="{Binding Id}"/>

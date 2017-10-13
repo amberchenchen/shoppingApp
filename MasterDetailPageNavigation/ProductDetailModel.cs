@@ -17,6 +17,7 @@ namespace MasterDetailPageNavigation
 		public string _productName;
 		public string _productDesc;
 		public string _Id;
+		public string _price;
 
 		public ICommand addToCart { get; }
 
@@ -97,6 +98,22 @@ namespace MasterDetailPageNavigation
 				{
 					_productDesc = value;
 					this.OnPropertyChanged("productDesc");
+				}
+			}
+		}
+
+		public string price
+		{
+			get
+			{
+				return _price;
+			}
+			set
+			{
+				if (_price != value)
+				{
+					_price = value;
+					this.OnPropertyChanged("price");
 				}
 			}
 		}
